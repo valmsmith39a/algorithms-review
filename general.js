@@ -1,7 +1,5 @@
 "use strict"
 
-// --- --- --- --- --- ---
-
 // General questions
 // Resources:
 // Career cup: https://www.careercup.com/page?pid=front-end-software-engineer-interview-questions
@@ -289,6 +287,7 @@ const num2 = 101;
 const num3 = 2014;
 const num4 = 3424;
 
+/*
 console.log("num1: ", num1);
 console.log("total num of zeroes is: ", totalZeros(num1));
 
@@ -297,5 +296,32 @@ console.log("total num of zeroes is: ", totalZeros(num2));
 
 console.log("num3: ", num3);
 console.log("total num of zeroes is: ", totalZeros(num3));
+*/
 
-// --- --- --- --- --- ---
+// --- --- ---
+
+// Re-order 1 array of objects based on 1 array of indexes
+// Resource: https://www.careercup.com/page?pid=front-end-software-engineer-interview-questions&sort=date
+
+function reOrderReplace(objArr, indexArr) {
+  let resultArr = [];
+  for (let i = 0; i < objArr.length; i++) {
+    resultArr.push("x");
+  }
+  for (let i = 0; i < objArr.length; i++) {
+    const index = indexArr[i];
+    const obj = objArr[i];
+    resultArr.splice(index, 1, obj);
+  }
+  return resultArr;
+}
+
+const objArr = ["a", "b", "c", "d", "e"];
+const indexArr = [3, 2, 0, 1, 4];
+
+console.log("Re-order 1 array of objects based on 1 array of indexes");
+console.log("--- --- ---");
+console.log("Solution 1, iterative loop/splice");
+console.log("arr1 of objects is ", objArr);
+console.log("arr2 of indexes is ", indexArr);
+console.log("reordered array is ", reOrderReplace(objArr, indexArr));
