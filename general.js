@@ -319,9 +319,46 @@ function reOrderReplace(objArr, indexArr) {
 const objArr = ["a", "b", "c", "d", "e"];
 const indexArr = [3, 2, 0, 1, 4];
 
+/*
 console.log("Re-order 1 array of objects based on 1 array of indexes");
 console.log("--- --- ---");
 console.log("Solution 1, iterative loop/splice");
 console.log("arr1 of objects is ", objArr);
 console.log("arr2 of indexes is ", indexArr);
 console.log("reordered array is ", reOrderReplace(objArr, indexArr));
+*/
+
+// --- --- ---
+
+// Merge 2 Sorted Arrays
+// Resources:
+// http://thatjsdude.com/interview/js1.html#isPrime
+// http://stackoverflow.com/questions/5958169/how-to-merge-two-sorted-arrays-into-a-sorted-array
+
+function mergeArrs(arr1, arr2) {
+  let i = 0;
+  let j = 0;
+  let k = 0;
+  let mergedArr = [];
+  while(i < arr1.length && j < arr2.length) {
+    mergedArr[k++] = arr1[i] < arr2[j] ? arr1[i++] : arr2[j++];
+  }
+  // while(i < arr1.length) {
+  //   mergedArr[k++] = arr1[i++];
+  // }
+  //
+  // while(j < arr2.length) {
+  //   mergedArr[k++] = arr2[j++];
+  // }
+  mergedArr = mergedArr.concat(arr1.slice(i)).concat(arr2.slice(j));
+  return mergedArr;
+}
+
+const arr1 = [1, 2, 2, 3, 4, 6];
+const arr2 = [0, 2, 5, 5, 5, 9];
+
+/*
+console.log("arr1 is: ", arr1);
+console.log("arr2 is: ", arr2);
+console.log("merged array is: ", mergeArrs(arr1, arr2));
+*/
